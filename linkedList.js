@@ -129,29 +129,32 @@ class SingleLinkedList {
                 current = current.next;
             }
             previous.next = current.next; // prev - cur - cur.next => cur 삭제해서 prev - cur.next로 수정
-            // console.log('cur', current)
             delete current.data
             delete current.next
-            // console.log('cur', current)
         }
         this.size--;
     }
 
-    //
+    // 추가
+    // data만 보여주는 용
+    printListData() {
+        let current = this.head;
+        while(current) {
+            console.log(current.data)
+            current = current.next
+        }
+    }
+    // 길이
 }
 const singleLinkedList = new SingleLinkedList();
 
 singleLinkedList.insertFirst(1)
-// console.log('singleLinkedList', singleLinkedList)  // LinkedList { head: Node { data: 100, next: null }, size: 1 }
 singleLinkedList.insertFirst(2)
-// console.log('singleLinkedList', singleLinkedList) // LinkedList {head: Node { data: 200, next: Node { data: 100, next: null } },size: 2 }
 singleLinkedList.insertLast(3)
 singleLinkedList.insertAt(4,1)
-// singleLinkedList.getAt(4)
-// singleLinkedList.head.data = 1  // 수정 되는데 연결리스트 수정이 없나?
 singleLinkedList.modifyAt(10,0)
-
 // console.log(singleLinkedList) // 10 - 4 - 1 - 3
 singleLinkedList.removeAt(1) // 1번 째 4를 지움
-console.log(singleLinkedList) // 10 - 1 - 3
-
+// console.log(singleLinkedList) // 10 - 1 - 3
+singleLinkedList.printListData(); // 10 1 3
+// console.log('singleLinkedList.size', singleLinkedList.size) // 3
