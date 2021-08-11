@@ -1,1 +1,1 @@
-# learn-datastructure
+# learn-data-structure
