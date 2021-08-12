@@ -155,6 +155,6 @@ singleLinkedList.insertAt(4,1)
 singleLinkedList.modifyAt(10,0)
 // console.log(singleLinkedList) // 10 - 4 - 1 - 3
 singleLinkedList.removeAt(1) // 1번 째 4를 지움
-// console.log(singleLinkedList) // 10 - 1 - 3
-singleLinkedList.printListData(); // 10 1 3
+console.log(singleLinkedList) // 10 - 1 - 3
+// singleLinkedList.printListData(); // 10 1 3
 // console.log('singleLinkedList.size', singleLinkedList.size) // 3
