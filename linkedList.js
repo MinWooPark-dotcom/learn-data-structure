@@ -113,7 +113,7 @@ class SingleLinkedList {
 
     // 삭제
     removeAt(index) {
-        if (index > 0 && index > this.size) throw new Error('invalid index');
+        if (index < 0 || index > this.size) throw new Error('invalid index');
 
         // 삭제 index의 이전 next를 삭제 index의 다음 값에 연결
         let current = this.head;
