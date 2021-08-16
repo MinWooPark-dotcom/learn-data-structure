@@ -4,39 +4,34 @@ class Graph {
     // adjacent list
     constructor(noOfVertices)
     {
-        this.noOfVertices = noOfVertices; // to store the number of vertices in the graph and AdjList, which stores a adjacency list of a particular vertex.
-        this.AdjList = new Map(); // We used a Map Object provided by ES6 in order to implement Adjacency list.
-        // console.log('this.AdjList', this.AdjList)
+        this.noOfVertices = noOfVertices; // 노드 갯수
+        this.AdjList = new Map(); // AdjList를 Map 객체로 구현
     }
 
-    // functions to be implemented
-
-    // addVertex(v)
     // add vertex to the graph
     addVertex(v)
     {
         // initialize the adjacent list with a
         // null array
-        // console.log('v', v) // A, B, C, D, E, F
-        this.AdjList.set(v, []);
+        this.AdjList.set(v, []); // set(key, value)
         // console.log('this.AdjList', this.AdjList) // { 'A' => [], 'B' => [], 'C' => [], 'D' => [], 'E' => [], 'F' => [] }
     }
 
-    // addEdge(v, w)
+
     // add edge to the graph
     addEdge(v, w)
     {
         // get the list for vertex v and put the
         // vertex w denoting edge between v and w
         // console.log('this.AdjList.get(v)', this.AdjList.get(v)) // get 메서드는 뭐지?
-        this.AdjList.get(v).push(w);
+        this.AdjList.get(v).push(w); // get(key)하면 배열 나오니 거기에 push
 
         // Since graph is undirected,
         // add an edge from w to v also
         this.AdjList.get(w).push(v);
     }
-    // printGraph()
-// Prints the vertex and adjacency list
+
+    // Prints the vertex and adjacency list
     printGraph()
     {
         // get all the vertices
@@ -49,6 +44,7 @@ class Graph {
         //   'D' => [ 'A', 'E' ],
         //   'E' => [ 'A', 'D', 'F', 'C' ],
         //   'F' => [ 'E', 'C' ] }
+
         // console.log('get_keys', get_keys) // [Map Iterator] { 'A', 'B', 'C', 'D', 'E', 'F' }
         // iterate over the vertices
         for (let i of get_keys)
@@ -56,7 +52,6 @@ class Graph {
             // great the corresponding adjacency list
             // for the vertex
             const get_values = this.AdjList.get(i);
-            console.log('get_values', get_values)
             let conc = "";
 
             // iterate over the adjacency list
