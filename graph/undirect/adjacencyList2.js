@@ -95,6 +95,17 @@ g.addEdge('C', 'F');
 // E -> A D F C
 // F -> E C
 g.printGraph();
+console.log('g', g)
+// Graph {
+//     noOfVertices: 6,
+//         AdjList:
+//     Map {
+//         'A' => [ 'B', 'D', 'E' ],
+//             'B' => [ 'A', 'C' ],
+//             'C' => [ 'B', 'E', 'F' ],
+//             'D' => [ 'A', 'E' ],
+//             'E' => [ 'A', 'D', 'F', 'C' ],
+//             'F' => [ 'E', 'C' ] } }
 
 
 
